@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/hectorj2f/pkgInd/cmd"
+	"github.com/hectorj2f/pkgind/cmd"
 )
 
 func main() {
