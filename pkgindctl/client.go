@@ -1,17 +1,18 @@
-package client
+package main
 
 import (
 	"bufio"
 	"fmt"
 	"net"
 
-	"github.com/hectorj2f/pkgInd/log"
-	"github.com/hectorj2f/pkgInd/transport"
+	"github.com/hectorj2f/pkgind/log"
+	"github.com/hectorj2f/pkgind/transport"
 )
 
 type Client struct {
-	listenIP   string
-	listenPort int
+	listenIP    string
+	listenPort  int
+	enableDebug bool
 }
 
 func (c Client) sendMessage(msg string) (transport.MessageResponseCode, error) {
@@ -21,7 +22,9 @@ func (c Client) sendMessage(msg string) (transport.MessageResponseCode, error) {
 	fmt.Fprintf(conn, msg+"\n")
 
 	message, err := bufio.NewReader(conn).ReadString('\n')
-	log.Logger().Debugf("sendMessage: message %s", string(message))
+	if c.enableDebug {
+		log.Logger().Debugf("sendMessage: message %s", string(message))
+	}
 
 	return transport.MessageResponseCode(message), err
 }
@@ -34,6 +37,9 @@ func (c Client) executeIndex(packageName string, dependencies []string) (transpo
 			msg = msg + "," + dependency
 		}
 	}
+	if c.enableDebug {
+		log.Logger().Debugf("executeIndex: message %s", msg)
+	}
 
 	return c.sendMessage(msg)
 }
@@ -41,11 +47,19 @@ func (c Client) executeIndex(packageName string, dependencies []string) (transpo
 func (c Client) executeRemove(packageName string) (transport.MessageResponseCode, error) {
 	msg := fmt.Sprintf("REMOVE|%s|", packageName)
 
+	if c.enableDebug {
+		log.Logger().Debugf("executeRemove: message %s", msg)
+	}
+
 	return c.sendMessage(msg)
 }
 
 func (c Client) executeQuery(packageName string) (transport.MessageResponseCode, error) {
 	msg := fmt.Sprintf("QUERY|%s|", packageName)
+
+	if c.enableDebug {
+		log.Logger().Debugf("executeQuery: message %s", msg)
+	}
 
 	return c.sendMessage(msg)
 }

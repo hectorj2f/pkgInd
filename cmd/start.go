@@ -4,9 +4,9 @@ import (
 	"flag"
 	"fmt"
 
-	"github.com/hectorj2f/pkgInd/log"
-	"github.com/hectorj2f/pkgInd/server"
-	"github.com/hectorj2f/pkgInd/utils"
+	"github.com/hectorj2f/pkgind/log"
+	"github.com/hectorj2f/pkgind/server"
+	"github.com/hectorj2f/pkgind/utils"
 	"github.com/spf13/cobra"
 )
 

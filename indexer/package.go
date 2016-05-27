@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/hectorj2f/pkgInd/log"
-	"github.com/hectorj2f/pkgInd/transport"
+	"github.com/hectorj2f/pkgind/log"
+	"github.com/hectorj2f/pkgind/transport"
 )
 
 // I store the dependencies as the packages that use this package to facilitate

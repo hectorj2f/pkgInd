@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/hectorj2f/pkgInd/log"
+	"github.com/hectorj2f/pkgind/log"
 	"github.com/spf13/cobra"
 )
 
@@ -41,8 +41,9 @@ func init() {
 func queryRun(cmd *cobra.Command, args []string) {
 	queryFlags.Validate()
 	client := &Client{
-		listenIP:   queryFlags.listenIP,
-		listenPort: queryFlags.listenPort,
+		listenIP:    queryFlags.listenIP,
+		listenPort:  queryFlags.listenPort,
+		enableDebug: queryFlags.verbose,
 	}
 	resp, err := client.executeQuery(queryFlags.packageName)
 	if err != nil {

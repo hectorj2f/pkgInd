@@ -1,10 +1,10 @@
-package client
+package main
 
 import (
 	"fmt"
 	"strings"
 
-	"github.com/hectorj2f/pkgInd/log"
+	"github.com/hectorj2f/pkgind/log"
 	"github.com/spf13/cobra"
 )
 
@@ -47,9 +47,11 @@ func indexRun(cmd *cobra.Command, args []string) {
 	dependencies = strings.Split(indexFlags.packageDependencies, ",")
 
 	indexFlags.Validate()
+
 	client := &Client{
-		listenIP:   indexFlags.listenIP,
-		listenPort: indexFlags.listenPort,
+		listenIP:    indexFlags.listenIP,
+		listenPort:  indexFlags.listenPort,
+		enableDebug: indexFlags.verbose,
 	}
 
 	resp, err := client.executeIndex(indexFlags.packageName, dependencies)

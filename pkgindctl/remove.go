@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/hectorj2f/pkgInd/log"
+	"github.com/hectorj2f/pkgind/log"
 	"github.com/spf13/cobra"
 )
 
@@ -41,8 +41,9 @@ func init() {
 func removeRun(cmd *cobra.Command, args []string) {
 	removeFlags.Validate()
 	client := &Client{
-		listenIP:   queryFlags.listenIP,
-		listenPort: queryFlags.listenPort,
+		listenIP:    removeFlags.listenIP,
+		listenPort:  removeFlags.listenPort,
+		enableDebug: removeFlags.verbose,
 	}
 	resp, err := client.executeRemove(removeFlags.packageName)
 	if err != nil {

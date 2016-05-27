@@ -1,4 +1,4 @@
-package client
+package main
 
 import (
 	"fmt"
@@ -9,8 +9,8 @@ import (
 var (
 	versionCmd = &cobra.Command{
 		Use:   "version",
-		Short: "Show pkgIndctl version",
-		Long:  "Show pkgIndctl version",
+		Short: "Show pkgindctl version",
+		Long:  "Show pkgindctl version",
 		Run:   versionRun,
 	}
 
@@ -19,5 +19,5 @@ var (
 )
 
 func versionRun(cmd *cobra.Command, args []string) {
-	fmt.Printf("pkgIndctl version %s (build %s)\n", projectVersion, projectBuild)
+	fmt.Printf("pkgindctl version %s (build %s)\n", projectVersion, projectBuild)
 }

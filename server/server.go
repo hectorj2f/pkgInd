@@ -6,9 +6,9 @@ import (
 	"net"
 	"strings"
 
-	"github.com/hectorj2f/pkgInd/indexer"
-	"github.com/hectorj2f/pkgInd/log"
-	"github.com/hectorj2f/pkgInd/transport"
+	"github.com/hectorj2f/pkgind/indexer"
+	"github.com/hectorj2f/pkgind/log"
+	"github.com/hectorj2f/pkgind/transport"
 )
 
 type PkgIndServer struct {

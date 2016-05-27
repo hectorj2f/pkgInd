@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 MAINTAINER hectorj@gmail.com
 
-COPY ./bin/pkgInd /usr/local/bin/
+COPY ./bin/pkgind /usr/local/bin/
 
-ENTRYPOINT ["/usr/local/bin/pkgInd"]
+ENTRYPOINT ["/usr/local/bin/pkgind"]
