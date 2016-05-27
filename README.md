@@ -58,3 +58,7 @@ QUERY|cloog|\n
 DOCKER: `docker run --rm -p 8080:8080 hectorj2f/pkgind start`
 
 RKT: `rkt run --port=host:8080 docker://hectorj2f/pkgind --exec=/usr/local/bin/pkgind -- start`
+
+## Further Steps
+
+Check more detailed documentation: [docs](docs)
