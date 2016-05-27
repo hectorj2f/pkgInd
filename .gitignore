@@ -1,0 +1,5 @@
+pkgInd
+.gobuild/
+bin-dist/
+build/
+bin/
