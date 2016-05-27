@@ -12,7 +12,7 @@ import (
 )
 
 type PkgIndServer struct {
-	pkgMgmt *indexer.PackageManager
+	pkgMgmt *indexer.PackageManagerV2
 
 	addchan chan Client
 	rmchan  chan net.Conn
@@ -34,7 +34,7 @@ type Message struct {
 // NewServer() creates a server initializing all its attributes
 func NewServer() *PkgIndServer {
 	server := &PkgIndServer{
-		pkgMgmt: indexer.NewPackageManager(),
+		pkgMgmt: indexer.NewPackageManagerV2(),
 		addchan: make(chan Client),
 		rmchan:  make(chan net.Conn),
 		eCh:     make(chan error),
