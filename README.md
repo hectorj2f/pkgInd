@@ -1,6 +1,6 @@
 [![Build Status](https://api.travis-ci.org/hectorj2f/pkgInd.svg)](https://travis-ci.org/hectorj2f/pkgInd)
 [![](https://godoc.org/github.com/hectorj2f/pkgInd?status.svg)](http://godoc.org/github.com/hectorj2f/pkgInd)
-[![](https://img.shields.io/docker/pulls/hectorj2f/pkgind.svg)](http://hub.docker.com/hectorj2f/pkgind
+[![](https://img.shields.io/docker/pulls/hectorj2f/pkgind.svg)](http://hub.docker.com/hectorj2f/pkgind)
 [![Go Report Card](https://goreportcard.com/badge/github.com/hectorj2f/pkgInd)](https://goreportcard.com/report/github.com/hectorj2f/pkgInd)
 
 # Package Indexer
@@ -22,6 +22,18 @@ Where:
 
 * The message always ends with the character `\n`
 
+
+## Build the binaries
+
+`$ make`
+
+To start the `pkgind` server:
+
+`$ ./bin/pkgind -h`
+
+To use the client `pkgindctl`:
+
+`$ ./bin/pkgindctl -h`
 
 ## Run using pkgIndctl
 
@@ -45,4 +57,4 @@ QUERY|cloog|\n
 
 DOCKER: `docker run --rm -p 8080:8080 hectorj2f/pkgind start`
 
-RKT: `rkt run --port=host:8080 docker://hectorj2f/pkgind --exec=/usr/local/bin/pkgInd -- start`
+RKT: `rkt run --port=host:8080 docker://hectorj2f/pkgind --exec=/usr/local/bin/pkgind -- start`
