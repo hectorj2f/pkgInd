@@ -1,4 +1,4 @@
-PROJECT=pkgInd
+PROJECT=pkgind
 ORGANIZATION=hectorj2f
 
 BINARY_SERVER=bin/$(PROJECT)
@@ -43,7 +43,7 @@ test: .gobuild
 	    -e GO15VENDOREXPERIMENT=1 \
 	    -w /usr/code/ \
 		golang:1.5 \
-	    bash -c 'cd .gobuild/src/github.com/hectorj2f/pkgInd && go test $$(go list ./... | grep -v vendor)'
+	    bash -c 'cd .gobuild/src/github.com/hectorj2f/pkgind && go test $$(go list ./... | grep -v vendor)'
 
 $(BINARY_SERVER): $(SOURCE) VERSION .gobuild
 	@echo Building for $(GOOS)/$(GOARCH)
@@ -56,7 +56,7 @@ $(BINARY_SERVER): $(SOURCE) VERSION .gobuild
 	    -e GO15VENDOREXPERIMENT=1 \
 	    -w /usr/code \
       golang:1.5 \
-	    go build -a -ldflags "-X github.com/hectorj2f/pkgInd/cmd.projectVersion=$(VERSION) -X github.com/hectorj2f/pkgInd/cmd.projectBuild=$(COMMIT)" -o $(BINARY_SERVER) github.com/$(ORGANIZATION)/$(PROJECT)
+	    go build -a -ldflags "-X github.com/hectorj2f/pkgind/cmd.projectVersion=$(VERSION) -X github.com/hectorj2f/pkgind/cmd.projectBuild=$(COMMIT)" -o $(BINARY_SERVER) github.com/$(ORGANIZATION)/$(PROJECT)
 
 $(BINARY_CTL): $(SOURCE) VERSION .gobuild
 	docker run \
@@ -68,7 +68,7 @@ $(BINARY_CTL): $(SOURCE) VERSION .gobuild
 	    -e GO15VENDOREXPERIMENT=1 \
 	    -w /usr/code \
       golang:1.5 \
-	    go build -a -ldflags "-X github.com/hectorj2f/pkgInd/client.projectVersion=$(VERSION) -X github.com/hectorj2f/pkgInd/cmd.projectBuild=$(COMMIT)" -o $(BINARY_CTL) github.com/$(ORGANIZATION)/$(PROJECT)/client
+	    go build -a -ldflags "-X github.com/hectorj2f/pkgind/client.projectVersion=$(VERSION) -X github.com/hectorj2f/pkgind/client.projectBuild=$(COMMIT)" -o $(BINARY_CTL) github.com/$(ORGANIZATION)/$(PROJECT)/pkgindctl
 
 distclean: clean clean-bin-dist
 
