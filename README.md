@@ -1,4 +1,4 @@
-[![Build Status](https://api.travis-ci.org/hectorj2f/pkgInd.svg)](https://travis-ci.org/hectorj2f/pkgind)
+[![Build Status](https://api.travis-ci.org/hectorj2f/pkgind.svg)](https://travis-ci.org/hectorj2f/pkgind)
 [![](https://godoc.org/github.com/hectorj2f/pkgInd?status.svg)](http://godoc.org/github.com/hectorj2f/pkgInd)
 [![](https://img.shields.io/docker/pulls/hectorj2f/pkgind.svg)](http://hub.docker.com/hectorj2f/pkgind)
 [![Go Report Card](https://goreportcard.com/badge/github.com/hectorj2f/pkgInd)](https://goreportcard.com/report/github.com/hectorj2f/pkgInd)
