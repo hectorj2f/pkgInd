@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/hectorj2f/pkgInd/log"
+	"github.com/hectorj2f/pkgind/log"
 	"github.com/spf13/cobra"
 )
 
