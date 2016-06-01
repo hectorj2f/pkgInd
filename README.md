@@ -27,6 +27,10 @@ Where:
 
 `$ make`
 
+To run the test:
+
+`$ make test`
+
 To start the `pkgind` server:
 
 `$ ./bin/pkgind -h`
